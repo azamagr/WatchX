@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            padding: 40px;
+            transition: background-color 0.4s ease;
+        }
+        #product-img{
+            width: 250px;
+            transition: transform 0.3s ease;
+        }
+        #product-img:hover {
+            content: url("https://zerolifestyle.co/cdn/shop/files/Jewel_2_2288ba30-27d5-4139-9966-91b4c0f537ae.webp?v=1744983680&width=900");
+        }
+        .btn{
+            margin-top: 15px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 0px;
+        }
+        #theme{
+            margin-right: 20px;
+            padding: 10px;
+            padding-right: 50px;
+            border-radius: 5px;
+            font-size: 16px;
+            border: 0px;
+        }
+        #message{
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>SmartWatch X</h1>
+    <img id="product-img" 
+        src="https://zerolifestyle.co/cdn/shop/files/Luna-_1_6.webp?v=1734558268&width=700" 
+        alt="smartwatch x">
+    <p>The latest SmartWatch X with fitness tracking, heart monitoring, and sleek design.</p>
+    <button class="btn" onclick="buyNow()">Buy Now</button>
+    <br><br>
+    <select name="" id="theme">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="blue">Blue</option>
+    </select>
+    <button class="btn" onclick="applyTheme()">Apply Theme</button>
+    <div id="message"></div>
+
+    <script>
+        const img = document.getElementById("product-img");
+        const message = document.getElementById("message");
+        function buyNow() 
+        {
+            alert("Thank you for the buying SmartWatch X!");
+            message.innerHTML = "You clicked Buy Now. Thank You!";
+            message.style.color = "darkblue";
+        }
+        function applyTheme() 
+        {
+            const theme = document.getElementById("theme").value;
+            if (theme === "light") {
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+                message.innerHTML = "Light theme has been applied.";
+                message.style.color = "#00f";
+            }
+            else if (theme === "dark") {
+                document.body.style.backgroundColor = "#222";
+                document.body.style.color = "white";
+                message.innerHTML = "Dark theme has been applied.";
+                message.style.color = "#00f";
+            }
+            else if (theme === "blue") {
+                document.body.style.backgroundColor = "#00f";
+                document.body.style.color = "#004d40";
+                message.innerHTML = "Blue theme has been applied.";
+                message.style.color = "#004d40";
+            }
+        }
+            img.onmouseover = function ()
+            {
+                img.src = "https://zerolifestyle.co/cdn/shop/files/Luna-_1_6.webp?v=1734558268&width=700";
+            }
+            img.onmouseout = function ()
+            {
+                img.src = "https://zerolifestyle.co/cdn/shop/files/Luna-_1_6.webp?v=1734558268&width=700";
+            }
+
+    </script>
+
+
+
+
+</body>
+</html>
